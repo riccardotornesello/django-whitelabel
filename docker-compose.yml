@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    restart: always
+    command: "/scripts/docker/start_dev.sh"
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app:/app
+      - ./data/media:/data/media/
+      - ./data/log:/data/log/
+      - ./requirements.txt:/requirements.txt
+      - ./scripts:/scripts
+    depends_on:
+      - database
+    environment:
+      - DJANGO_SETTINGS_MODULE=app.settings.docker_development
+    env_file:
+      - ./.env
+
+  database:
+    image: mariadb:10.8
+    restart: always
+    volumes:
+      - ./data/database:/var/lib/mysql
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=app_db
+      - MYSQL_USER=app_db
+    ports:
+      - 3306:3306
+    env_file:
+      - ./.env
