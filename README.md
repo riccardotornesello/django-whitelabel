@@ -10,7 +10,7 @@
 ## Environments
 
 - Local dev: to develop on your PC without Docker. Use `manage.py` as always.
-- Docker dev: to develop on yout PC using a more production-like environment with a MySQL database. Autoreload is enabled and every change in the `app` folder is applied to `/app` in the container and vice versa. Requirements are installed at build time and migrations are applied at boot but you can do that manually.
+- Docker dev: to develop on your PC using a more production-like environment with a MySQL database. Auto-reload is enabled and every change in the `app` folder is applied to `/app` in the container and vice versa. Requirements are installed at build time and migrations are applied at boot but you can do that manually.
 - Staging: like production but with admin and debug enabled for testing purposes.
 - Production: the deployed version.
 
@@ -23,18 +23,19 @@
 
 ### Features table
 
-|                                    | Local Dev | Docker Dev | Staging |                 Production                 |
-| ---------------------------------- | :-------: | :--------: | :-----: | :----------------------------------------: |
-| Auto-reload                        |    ✅     |     ✅     |   ❌    |                     ❌                     |
-| Auto migrate at start              |    ✅     |     ✅     |   ✅    |                     ✅                     |
-| Auto requirements install at start |    ✅     |     ✅     |   ✅    |                     ✅                     |
-| Database                           |  SQLite   |  MariaDB   | MariaDB |                  MariaDB                   |
-| Reverse proxy (Nginx)              |    ❌     |     ❌     |   ✅    |                     ✅                     |
-| Debug                              |    ✅     |     ✅     |   ✅    |                     ❌                     |
-| Admin page                         |    ✅     |     ✅     |   ✅    | ❌ (can be enabled in settings/production) |
-| Serving media automatically        |    ✅     |     ✅     |   ❌    |                     ❌                     |
-| CORS allow all                     |    ✅     |     ✅     |   ❌    |                     ❌                     |
-| Allow all hosts                    |    ✅     |     ✅     |   ❌    |                     ❌                     |
+|                                    |  Local Dev  | Docker Dev | Staging |                 Production                 |
+| ---------------------------------- | :---------: | :--------: | :-----: | :----------------------------------------: |
+| Auto-reload                        |     ✅      |     ✅     |   ❌    |                     ❌                     |
+| Auto migrate at start              |     ✅      |     ✅     |   ✅    |                     ✅                     |
+| Auto requirements install at start |     ✅      |     ✅     |   ✅    |                     ✅                     |
+| Database                           |   SQLite    |  MariaDB   | MariaDB |                  MariaDB                   |
+| Database port publically exposed   | Not present |     ✅     |   ❌    |                     ❌                     |
+| Reverse proxy (Nginx)              |     ❌      |     ❌     |   ✅    |                     ✅                     |
+| Debug                              |     ✅      |     ✅     |   ✅    |                     ❌                     |
+| Admin page                         |     ✅      |     ✅     |   ✅    | ❌ (can be enabled in settings/production) |
+| Serving media automatically        |     ✅      |     ✅     |   ❌    |                     ❌                     |
+| CORS allow all                     |     ✅      |     ✅     |   ❌    |                     ❌                     |
+| Allow all hosts                    |     ✅      |     ✅     |   ❌    |                     ❌                     |
 
 ## Configuration
 
