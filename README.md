@@ -2,10 +2,10 @@
 
 ## Features
 
-[X] Separated settings for different environments
-[X] Docker
-[X] Different docker-compose for different environments
-[ ] CI/CD
+- [X] Separated settings for different environments
+- [X] Docker
+- [X] Different docker-compose for different environments
+- [ ] CI/CD
 
 ## Environments
 
