@@ -2,9 +2,9 @@
 
 ## Features
 
-- [X] Separated settings for different environments
-- [X] Docker
-- [X] Different docker-compose for different environments
+- [x] Separated settings for different environments
+- [x] Docker
+- [x] Different docker-compose for different environments
 - [ ] CI/CD
 
 ## Environments
@@ -35,6 +35,7 @@
 | Admin page                         |     ✅      |     ✅     |   ✅    | ❌ (can be enabled in settings/production) |
 | Serving media automatically        |     ✅      |     ✅     |   ❌    |                     ❌                     |
 | CORS allow all                     |     ✅      |     ✅     |   ❌    |                     ❌                     |
+| CSRF allow all                     |     ✅      |     ✅     |   ❌    |                     ❌                     |
 | Allow all hosts                    |     ✅      |     ✅     |   ❌    |                     ❌                     |
 
 ## Configuration
@@ -51,6 +52,7 @@
 | SECRET_KEY (default string for dev) |    ⚠️     |     ⚠️     |   ✅    |     ✅     |
 | ALLOWED_HOSTS (all for dev)         |    ❌     |     ❌     |   ✅    |     ✅     |
 | CORS_ALLOWED_ORIGINS (all for dev)  |    ❌     |     ❌     |   ✅    |     ✅     |
+| CSRF_TRUSTED_ORIGINS (all for dev)  |    ❌     |     ❌     |   ✅    |     ✅     |
 | EMAIL_HOST                          |    ⚠️     |     ⚠️     |   ⚠️    |     ⚠️     |
 | EMAIL_HOST_PASSWORD                 |    ⚠️     |     ⚠️     |   ⚠️    |     ⚠️     |
 | EMAIL_HOST_USER                     |    ⚠️     |     ⚠️     |   ⚠️    |     ⚠️     |
@@ -67,4 +69,5 @@ EMAIL_HOST_USER=yourmail@gmail.com
 EMAIL_PORT=587
 ALLOWED_HOSTS=localhost,127.0.0.1,api.something.it
 CORS_ALLOWED_ORIGINS=https://frontend.com,https://sub.frontend.com
+CSRF_TRUSTED_ORIGINS=https://api.app.com,https://app.com,https://*.otherdomain.com
 ```

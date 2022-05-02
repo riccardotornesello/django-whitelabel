@@ -9,6 +9,8 @@ if ADMIN_ENABLED:
     INSTALLED_APPS.append('django.contrib.admin')
 
 ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].split(',')
+CORS_ALLOWED_ORIGINS = os.environ['CORS_ALLOWED_ORIGINS'].split(',')
+CSRF_TRUSTED_ORIGINS = os.environ['CSRF_TRUSTED_ORIGINS'].split(',')
 
 DATABASES = {
     'default': {
@@ -22,5 +24,3 @@ DATABASES = {
 }
 
 SERVE_MEDIA = False
-
-CORS_ALLOWED_ORIGINS = os.environ['CORS_ALLOWED_ORIGINS'].split(',')
